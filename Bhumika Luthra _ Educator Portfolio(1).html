@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bhumika Luthra | Educator Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Didact+Gothic&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --ink:#1A1A1A; --soft:#555B63; --rule:#1A1A1A;
+  --marigold:#FF9F1C; --sky:#2EA7E0; --leaf:#3DAA5C; --berry:#E0457B;
+  --nb-blue:#9CC6E8; --nb-red:#E88C8C; --card:#FFFFFF;
+  --hand:"Kalam", "Comic Sans MS", cursive;
+  --body:"Didact Gothic", "Century Gothic", "Avenir", Arial, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --paper:#15181C; --ink:#EDEFF2; --soft:#A9B0B8; --rule:#EDEFF2; --card:#1D2126; --nb-blue:#3C5C78; --nb-red:#7A4040; }
+}
+:root[data-theme="dark"]{ --paper:#15181C; --ink:#EDEFF2; --soft:#A9B0B8; --rule:#EDEFF2; --card:#1D2126; --nb-blue:#3C5C78; --nb-red:#7A4040; }
+html{ scroll-padding-top:env(safe-area-inset-top,0px) }
+*,*::before,*::after{ box-sizing:inherit }
+body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--body); font-size:1.08rem; line-height:1.65 }
+a{ color:inherit }
+a:focus-visible,button:focus-visible{ outline:3px solid var(--sky); outline-offset:3px }
+@media (prefers-reduced-motion: reduce){ *{ transition:none!important; animation:none!important } }
+.wrap{ max-width:1080px; margin:0 auto; padding:0 1.25rem }
+h1,h2,h3{ font-family:var(--hand); font-weight:700; line-height:1.1; margin:0 }
+h2{ font-size:clamp(2rem,4.6vw,3rem) }
+h3{ font-size:1.45rem }
+p{ max-width:64ch; margin:.6rem 0 }
+section{ padding:4.5rem 0; border-top:2px solid var(--rule) }
+.underline{ background:linear-gradient(transparent 72%, var(--accent,var(--marigold)) 72%, var(--accent,var(--marigold)) 96%, transparent 96%); padding:0 .15em }
+
+/* hero: letter on a four-line notebook */
+.hero{ padding:3rem 0 4rem; border-top:none }
+.hero-grid{ display:grid; grid-template-columns:1.3fr .7fr; gap:3rem; align-items:start }
+.notebook{ background:var(--card); border:2px solid var(--rule); border-radius:4px; padding:2.2rem 2rem 2rem 4.2rem; position:relative;
+  background-image:
+    linear-gradient(90deg, transparent 3.2rem, var(--nb-red) 3.2rem, var(--nb-red) calc(3.2rem + 2px), transparent calc(3.2rem + 2px)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 8px, var(--nb-blue) 8px, var(--nb-blue) 9px, transparent 9px, transparent 17px, var(--nb-red) 17px, var(--nb-red) 18px, transparent 18px, transparent 26px, var(--nb-blue) 26px, var(--nb-blue) 27px, transparent 27px, transparent 36px);
+  background-position:0 0, 0 2.2rem; }
+.notebook p,.notebook h1{ font-family:var(--hand); }
+.notebook h1{ font-size:1.6rem; font-weight:400; line-height:36px; margin:0 }
+.notebook p{ font-size:1.3rem; line-height:36px; margin:0 0 36px; max-width:none }
+.notebook .sign{ font-weight:700; font-size:1.7rem; margin:0 }
+.side .name{ font-family:var(--hand); font-weight:700; font-size:clamp(2.6rem,6vw,4rem); line-height:1 }
+.side .role{ font-size:1.15rem; margin:.8rem 0 1.4rem }
+.facts{ list-style:none; padding:0; margin:0; border-top:2px solid var(--rule) }
+.facts li{ padding:.65rem 0; border-bottom:1px solid var(--rule) }
+.facts b{ display:block; font-family:var(--hand); font-size:1.25rem }
+.btn{ display:inline-block; margin-top:1.4rem; font-family:var(--hand); font-weight:700; font-size:1.25rem; text-decoration:none; background:var(--ink); color:var(--paper); padding:.55rem 1.2rem; border-radius:3px }
+
+/* principles */
+.principles{ display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; margin-top:2.2rem }
+.principles div{ border-top:6px solid var(--accent); padding-top:1rem }
+.principles p{ font-size:1.02rem }
+
+/* sample unit */
+.unit-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:end; gap:1rem }
+.tag{ font-family:var(--hand); border:2px dashed var(--soft); color:var(--soft); padding:.15rem .6rem; border-radius:3px; font-size:1rem }
+.tabs{ display:flex; flex-wrap:wrap; gap:.5rem; margin:2rem 0 0 }
+.tab{ font-family:var(--hand); font-weight:700; font-size:1.2rem; background:transparent; color:var(--ink); border:2px solid var(--rule); border-bottom:none; border-radius:6px 6px 0 0; padding:.4rem 1.1rem; cursor:pointer }
+.tab[aria-selected="true"]{ background:var(--sky); color:#fff; border-color:var(--sky) }
+.panel{ border:2px solid var(--rule); padding:1.6rem; display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; background:var(--card) }
+.panel h3{ margin-bottom:.4rem }
+.panel ul{ padding-left:1.1rem; margin:.4rem 0 } .panel li{ margin-bottom:.35rem }
+.adapt{ border-left:4px solid var(--sky); padding-left:1rem }
+.adapt b{ font-family:var(--hand); font-size:1.15rem; display:block; margin-top:.6rem }
+.scroll{ overflow-x:auto; margin-top:1.8rem }
+table{ border-collapse:collapse; width:100%; min-width:560px; background:var(--card) }
+th,td{ border:2px solid var(--rule); padding:.6rem .75rem; text-align:left; vertical-align:top; font-size:1rem }
+th{ font-family:var(--hand); font-size:1.15rem }
+th.lvl{ background:var(--sky); color:#fff }
+
+/* teachers */
+.two{ display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; margin-top:2rem }
+.quote{ font-family:var(--hand); font-size:1.5rem; line-height:1.35; border-left:6px solid var(--leaf); padding-left:1.2rem; margin:0 }
+
+/* studio */
+.works{ display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; margin-top:2rem }
+.work{ border:2px solid var(--rule); padding:1.3rem; background:var(--card) }
+.work .status{ font-family:var(--hand); font-size:1rem; color:var(--berry) }
+.work p{ font-size:1rem }
+
+/* timeline */
+.timeline{ list-style:none; margin:2rem 0 0; padding:0; border-left:3px solid var(--rule) }
+.timeline li{ position:relative; padding:0 0 1.6rem 1.6rem }
+.timeline li::before{ content:""; position:absolute; left:-10px; top:.45rem; width:17px; height:17px; background:var(--paper); border:3px solid var(--rule); border-radius:50% }
+.timeline li.now::before{ background:var(--marigold) }
+.when{ font-family:var(--hand); color:var(--soft); font-size:1.05rem }
+.timeline h3{ font-size:1.35rem }
+.edu{ display:grid; grid-template-columns:repeat(2,1fr); gap:1rem 2rem; margin-top:2rem }
+.edu div{ border-top:2px solid var(--rule); padding-top:.6rem }
+.edu b{ font-family:var(--hand); font-size:1.2rem; display:block }
+
+footer{ border-top:2px solid var(--rule); padding:4rem 0 5rem }
+footer .big{ font-family:var(--hand); font-weight:700; font-size:clamp(2rem,5vw,3.2rem); line-height:1.1; max-width:18ch }
+
+@media (max-width:880px){
+  .hero-grid,.panel,.two,.works{ grid-template-columns:1fr }
+  .principles,.edu{ grid-template-columns:1fr }
+  .notebook{ padding:1.6rem 1.2rem 1.4rem 3.4rem; background-position:0 0, 0 1.6rem }
+  .notebook{ background-image:
+    linear-gradient(90deg, transparent 2.4rem, var(--nb-red) 2.4rem, var(--nb-red) calc(2.4rem + 2px), transparent calc(2.4rem + 2px)),
+    repeating-linear-gradient(to bottom, transparent 0, transparent 8px, var(--nb-blue) 8px, var(--nb-blue) 9px, transparent 9px, transparent 17px, var(--nb-red) 17px, var(--nb-red) 18px, transparent 18px, transparent 26px, var(--nb-blue) 26px, var(--nb-blue) 27px, transparent 27px, transparent 36px); }
+  .notebook p{ font-size:1.15rem }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+ <div class="wrap hero-grid">
+  <div class="notebook">
+   <h1>Dear hiring team,</h1>
+   <p>I'm Bhumika, an elementary educator trained at Miranda House. I plan learning that connects across weeks, watch closely to see what each child is ready for, and use assessment to decide what comes next.</p>
+   <p>I've taught Class 2 in an experiential, child-centred school, designed curriculum for a junior programme, and run professional development for fellow teachers. I'd love to bring this to your classrooms.</p>
+   <p class="sign">Bhumika Luthra</p>
+  </div>
+  <aside class="side">
+   <div class="name">Bhumika Luthra</div>
+   <div class="role">Elementary educator and curriculum designer</div>
+   <ul class="facts">
+    <li><b>Trained in</b>B.El.Ed, Miranda House, University of Delhi, and a PGDLT</li>
+    <li><b>Teaching approach</b>Experiential, inquiry-based, inspired by Reggio Emilia and Waldorf practice</li>
+    <li><b>Based in</b>Delhi NCR, open to roles in India and the UAE</li>
+   </ul>
+   <a class="btn" href="mailto:bhumikaluthra98@gmail.com">Email me</a>
+  </aside>
+ </div>
+</header>
+
+<section>
+ <div class="wrap">
+  <h2>How I teach</h2>
+  <div class="principles">
+   <div style="--accent:var(--marigold)"><h3>Start with wonder</h3><p>Children learn best when they explore first. I begin units with a question, a story or something to touch, and build the skills from there.</p></div>
+   <div style="--accent:var(--sky)"><h3>Plan across weeks</h3><p>Lessons shouldn't sit on their own. I sequence learning so reading, maths and environmental studies build on each other through a shared theme.</p></div>
+   <div style="--accent:var(--leaf)"><h3>Watch, then adapt</h3><p>Observation tells me what a child is ready for. I adjust pace, materials and support, and use assessments to decide what to reteach or extend.</p></div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <div class="unit-head">
+   <h2>A week in my classroom</h2>
+   <span class="tag">Sample unit plan, Class 2</span>
+  </div>
+  <p style="margin-top:1rem">Theme: <span class="underline" style="--accent:var(--sky)">Water around us</span>. One theme carries through language, maths and environmental studies, so children see the same idea from different sides.</p>
+
+  <div class="tabs" role="tablist" aria-label="Days of the unit">
+   <button class="tab" role="tab" aria-selected="true" data-d="0">Mon</button>
+   <button class="tab" role="tab" aria-selected="false" data-d="1">Tue</button>
+   <button class="tab" role="tab" aria-selected="false" data-d="2">Wed</button>
+   <button class="tab" role="tab" aria-selected="false" data-d="3">Thu</button>
+   <button class="tab" role="tab" aria-selected="false" data-d="4">Fri</button>
+  </div>
+  <div class="panel" role="tabpanel" id="panel" aria-live="polite"></div>
+
+  <h3 style="margin-top:2.5rem">How I'll know they've learned it</h3>
+  <p>A simple rubric I share with children in their own words, so they know what "good" looks like.</p>
+  <div class="scroll"><table>
+   <thead><tr><th>I can...</th><th class="lvl">Beginning</th><th class="lvl">Growing</th><th class="lvl">Confident</th></tr></thead>
+   <tbody>
+    <tr><td>Say where water comes from</td><td>Names one source with help</td><td>Names two sources</td><td>Names three sources and explains one</td></tr>
+    <tr><td>Measure and compare</td><td>Counts cups with support</td><td>Measures and says which holds more</td><td>Measures, compares and records in a table</td></tr>
+    <tr><td>Write about water</td><td>Draws and labels</td><td>Writes two sentences</td><td>Writes three sentences with a reason</td></tr>
+   </tbody>
+  </table></div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Helping other teachers grow</h2>
+  <div class="two">
+   <div>
+    <p>As Consultant Educator for the Junior Programme at Heritage Xperiential Learning School, I designed professional development around the problems teachers were actually facing, not generic topics.</p>
+    <p>I also developed curriculum and learning resources used across classes, keeping teaching consistent while leaving room to adapt, and wrote induction material for new colleagues.</p>
+    <p>At Arbre Creations, I now design onboarding and training content for adult learners, which has sharpened how I break complex ideas into clear steps.</p>
+   </div>
+   <p class="quote">Good professional development starts where teachers are stuck, and ends with something they can try in class the next morning.</p>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="wrap">
+  <h2>Experience</h2>
+  <ol class="timeline">
+   <li class="now"><span class="when">June 2024 to present</span><h3>Learning and Development Coordinator, Arbre Creations</h3><p>Designing onboarding and training content and facilitating development sessions for adult learners.</p></li>
+   <li><span class="when">Sept 2023 to May 2024</span><h3>Consultant Educator, Junior Programme, Heritage Xperiential Learning School</h3><p>Curriculum and resources for the junior programme, teacher professional development and induction.</p></li>
+   <li><span class="when">June 2022 to June 2023</span><h3>Resident Educator, Class 2, Heritage Xperiential Learning School</h3><p>Planned and taught a full year, with observation-led adaptation and assessment that shaped next steps.</p></li>
+   <li><span class="when">Sept 2020 to March 2021</span><h3>Teaching Intern, Atal Adarsh Vidyalaya (NDMC) and MCD School</h3><p>Inclusive curriculum planning for classrooms with a wide range of learning needs.</p></li>
+  </ol>
+  <div class="edu">
+   <div><b>B.El.Ed</b>Miranda House, University of Delhi, 2017 to 2021</div>
+   <div><b>PGDLT</b>Post Graduate Diploma in Learning and Teaching, I AM A TEACHER, 2022 to 2023</div>
+   <div><b>ELT Professional Development Conference</b>Regional English Language Office, U.S. Embassy, 2020</div>
+   <div><b>The Complete Instructional Designer Course</b>Udemy, 2025</div>
+  </div>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <p class="big">I'd love to hear about your classrooms.</p>
+  <p>Email <a href="mailto:bhumikaluthra98@gmail.com">bhumikaluthra98@gmail.com</a> or call +91 99996 01097.</p>
+  <a class="btn" href="mailto:bhumikaluthra98@gmail.com">Email me</a>
+ </div>
+</footer>
+
+<script>
+const days=[
+ {t:"Monday: Where does water come from?",do:["Story circle with a picture book about a raindrop's journey","Walk around the school to find every place we see water","Draw and label the water we found"],
+  sup:"Picture cards to match water sources with words",ext:"Sort sources into natural and human-made"},
+ {t:"Tuesday: How much does it hold?",do:["Measure bottles, mugs and bowls using cups of water","Record results in a class tally chart","Talk: which holds the most, and how do we know?"],
+  sup:"Work in pairs with one container at a time",ext:"Predict before measuring, then check the guess"},
+ {t:"Wednesday: Floating and sinking",do:["Test classroom objects in a water tub","Sort results on a two-column chart","Introduce the words float, sink and because"],
+  sup:"Sentence starter: It sinks because...",ext:"Find an object that floats one way and sinks another"},
+ {t:"Thursday: Saving water",do:["Count how many times we use water in a school day","Hindi and English word wall for water words","Make a class promise poster"],
+  sup:"Trace and copy key words from the word wall",ext:"Write a short note to parents about saving water"},
+ {t:"Friday: Show what we know",do:["Children choose: draw, write or act out the water journey","Share work in a gallery walk","Quick rubric check-in with each child"],
+  sup:"One-to-one talk-through instead of writing",ext:"Explain the journey to a younger class"}
+];
+const panel=document.getElementById('panel');
+function show(i){
+  const d=days[i];
+  panel.innerHTML='<div><h3>'+d.t+'</h3><ul>'+d.do.map(x=>'<li>'+x+'</li>').join('')+'</ul></div>'+
+   '<div class="adapt"><b>For children who need support</b>'+d.sup+'<b>For children ready for more</b>'+d.ext+'</div>';
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected', t.dataset.d==i ? 'true':'false'));
+}
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>show(+t.dataset.d)));
+show(0);
+</script>
+</body>
+</html>
